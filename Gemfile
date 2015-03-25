@@ -37,4 +37,8 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'pry-rails'
+gem 'compass-rails'
+gem 'kaminari'
+gem 'devise'
+gem 'bullet'
