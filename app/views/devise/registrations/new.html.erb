@@ -1,0 +1,44 @@
+<section class="contact" id="contact">
+<div class="container">
+    <div class="heading">
+            <img class="dividerline" src="<%= asset_path "sep.png" %>" alt="">
+            <h2>Sign up</h2>
+            <img class="dividerline" src="<%= asset_path "sep.png" %>" alt="">
+            <h3>Phasellus non dolor nibh. Nullam elementum tellus pretium feugiat.<br>
+             Cras dictum tellus dui, vitae sollicitudin ipsum tincidunt in. Sed tincidunt tristique enim sed sollcitudin.</h3>
+    </div>
+
+<div class="heading" style="padding-top: 0;padding-bottom: 80px;">
+<h2 style="font-size: 20px">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), id: "contactform") do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="contact col-md-12">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div><br>
+<img class="dividerline" src="<%= asset_path "sep.png" %>" alt=""><br>
+  <div class="contact noMarr col-md-12">
+    <%= f.label :password %>
+    <% if @validatable %>
+    <em>(<%= @minimum_password_length %> minimum_length)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div><br>
+<img class="dividerline" src="<%= asset_path "sep.png" %>" alt=""><br>
+  <div class="contact col-md-12">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div><br>
+<img class="dividerline" src="<%= asset_path "sep.png" %>" alt=""><br>
+  <div class="submit">
+    <%= f.submit "Sign up" %>
+  </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</h2>
+</div>
+</div>
+</section>
+
+
