@@ -5,7 +5,7 @@
         <img class="dividerline" src="<%= asset_path "sep.png" %>" alt="">
         <h2>About Leroy</h2>
         <img class="dividerline" src="<%= asset_path "sep.png" %>" alt="">
-        <h3>美味しい手料理を食べるHave you ever felt worried that your party will not raise up to your guest expectations? In design, vertical rhythm is the structure that guides a reader's eye through the content. Good vertical rhythm makes a layout more balanced and beautiful and its content more readable. The time signature in sheet music visually depicts a song's rhythm, while for us, the lines of the baseline grid depict the rhythm of our content and give us guidelines.</h3>
+        <h3>美味しい手料理を食べる Have you ever felt worried that your party will not raise up to your guest expectations? In design, vertical rhythm is the structure that guides a reader's eye through the content. Good vertical rhythm makes a layout more balanced and beautiful and its content more readable. The time signature in sheet music visually depicts a song's rhythm, while for us, the lines of the baseline grid depict the rhythm of our content and give us guidelines.</h3>
     </div>          
     <div class="row">
         <div class="col-md-6">
@@ -146,7 +146,18 @@
 
                 <section class="grid-wrap">
                     <ul class="grid">
-                        <li class="grid-sizer"></li><!-- for Masonry column width -->               
+                        <li class="grid-sizer"></li><!-- for Masonry column width -->
+                        <% @products.each do |product|%>
+                        <li>
+                            <figure>
+                                <img src="" alt="">
+                                <figcaption>
+                                    <h3><%= product.title %></h3>
+                                    <p><%= product.explanation %></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <% end %>
                         <li>
                             <figure>
                                 <img src="http://wowthemes.net/demo/leroy/img/dummies/10.jpg" alt=""/>
@@ -294,7 +305,7 @@
              Cras dictum tellus dui, vitae sollicitudin ipsum tincidunt in. Sed tincidunt tristique enim sed sollcitudin.</h3>
     </div>
 </div>
- <div class="container w960">
+<div class="container w960">
   <div class="row">
     <div class="done">
         <div class="alert alert-success">
