@@ -80,12 +80,19 @@
                 
                 <section class="slideshow">
                     <ul>
+                        <% @products.each do |product| %>
                         <li>
                             <figure>
-                                <img src="http://wowthemes.net/demo/leroy/img/dummies/10.jpg" alt=""/>
-                                <figcaption><h3>Thundercats next level</h3><p>Portland nulla butcher ea XOXO, consequat Bushwick Pinterest elit twee pickled direct trade vero. </p></figcaption>
+                                <%= image_tag product.avatar.url %>
+                                <figcaption>
+                                    <h3><%= product.title %></h3>
+                                    <p><%= product.explanation %></p>
+                                    <a href="/products/<%= product.id %>">詳しく見る</a>
+                                </figcaption>
                             </figure>
+
                         </li>
+                        <% end %>
                         <li>
                             <figure>
                                 <img src="http://wowthemes.net/demo/leroy/img/dummies/11.jpg" alt=""/>
