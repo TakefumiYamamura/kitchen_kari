@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :products
   has_many :images
-  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
-  validates_attachment :avatar, :content_type => ["image/jpeg", "image/png"]
+  # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
+  # validates_attachment :avatar, :content_type => ["image/jpeg", "image/png"]
+  #上何故かうまくいかないからコメントアウト
 end

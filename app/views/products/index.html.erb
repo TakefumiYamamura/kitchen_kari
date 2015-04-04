@@ -11,7 +11,19 @@
 
                 <section class="grid-wrap">
                     <ul class="grid">
-                        <li class="grid-sizer"></li><!-- for Masonry column width -->               
+                        <li class="grid-sizer"></li><!-- for Masonry column width -->
+                        <% @products.each do |product|%>
+                        <li>
+                            <figure>
+                                <img src="" alt="">
+                                <%= image_tag product.avatar.url %>
+                                <figcaption>
+                                    <h3><%= product.title %></h3>
+                                    <p><%= product.explanation %></p>
+                                </figcaption>
+                            </figure>
+                        </li>
+                        <% end %>
                         <li>
                             <figure>
                                 <img src="http://wowthemes.net/demo/leroy/img/dummies/10.jpg" alt=""/>
@@ -126,7 +138,7 @@
                     </nav>
                     <div class="info-keys icon">Navigate with arrow keys</div>
                 </section><!-- // end slideshow -->
-                
+                <%= paginate(@products) %>
             </div><!-- // grid-gallery -->
         </div>
 </section>
