@@ -1,0 +1,5 @@
+<div>
+  人数：<%= book.persons %>
+  来訪予定時間：<%= book.book_time %>
+  <%= link_to "予約者のプロフィールを確認する", user_path(book.user_id) %>
+</div>
