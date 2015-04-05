@@ -1,0 +1,37 @@
+  <header>
+<!--   <div class="menu"> -->
+    <div class="navbar-wrapper">
+      <div class="container">
+        <div class="navwrapper">
+          <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+              <div class="navArea">
+                <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li class="menuItem"><a href="/#aboutus">トップ</a></li>
+                    <li class="menuItem"><a href="/products">料理を探す</a></li>
+                    <li class="menuItem"><a href="/products/new">料理を掲載する</a></li>
+                    <% if user_signed_in? %>
+                    <li class="menuItem"><a href="/users/<%= current_user.id %>">マイページ</a></li>
+                    <li class="menuItem"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                    <% else %>
+                    <li class="menuItem"><a href="/users/sign_in">ログイン</a></li>
+                    <% end %>
+                    <li class="menuItem">
+                      <form class="navbar-form" action="/products" method="get">
+                        <input type="text" class="span2" value placeholder="どこで食べる？" style="  background-color: #fff;
+  color: #565a5c;">
+                        <button type="submit" class="btn" style="background-color: #ff5a5f;
+  color: #fff;">検索</button>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--   </div> -->  
+  </header>

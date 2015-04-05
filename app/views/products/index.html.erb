@@ -1,3 +1,4 @@
+<%= render partial: '/layouts/header' %>
 <!--gallery-->
 <section class="gallery" id="gallery">
     <div class="container">
@@ -15,14 +16,12 @@
                         <% @products.each do |product|%>
                         <li>
                             <figure>
-                                <a href="/products/<%= product.id %>">
                                 <img src="" alt="">
                                 <%= image_tag product.avatar.url %>
                                 <figcaption>
                                     <h3><%= product.title %></h3>
                                     <p><%= product.explanation %></p>
                                 </figcaption>
-                                </a>
                             </figure>
                         </li>
                         <% end %>
@@ -88,6 +87,7 @@
                                 <img src="<%= product.avatar.url %>" alt="" style="max-height: 300px; width:auto;">
                                 <figcaption>
                                     <h3><%= product.title %></h3>
+                                    <p>値段 <%= product.price %>円</p>
                                     <p><%= product.explanation %></p>
                                     <a href="/products/<%= product.id %>">詳しく見る</a>
                                 </figcaption>
