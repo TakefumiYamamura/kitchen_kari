@@ -1,0 +1,12 @@
+<!-- これページ遷移せずにクリックしたらリスト表示でバーってなるようにしたい！！ -->
+<br><br><br><br>
+<div>
+  <h4>予約者(cooks)一覧</h4>
+  <%= render partial: 'book', collection: @books %>
+</div>
+<br>
+<div>
+  <h4>自分の予約を確認する</h4>
+  <%= render partial: 'selfbook', collection: @self_books %>
+</div>
+

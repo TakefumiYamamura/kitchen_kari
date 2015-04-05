@@ -15,11 +15,14 @@
                         <% @products.each do |product|%>
                         <li>
                             <figure>
+                                <a href="/products/<%= product.id %>">
+                                <img src="" alt="">
                                 <%= image_tag product.avatar.url %>
                                 <figcaption>
                                     <h3><%= product.title %></h3>
                                     <p><%= product.explanation %></p>
                                 </figcaption>
+                                </a>
                             </figure>
                         </li>
                         <% end %>
