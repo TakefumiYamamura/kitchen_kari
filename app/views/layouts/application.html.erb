@@ -7,6 +7,7 @@
 <!--   <script type='text/javascript' src='http://code.jquery.com/jquery-git2.js'></script>
 <script type="text/javascript" src="http://jpostal.googlecode.com/svn/trunk/jquery.jpostal.js"></script> -->
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
   <header>
@@ -36,7 +37,7 @@
                     <li class="menuItem"><a href="/#gallery">Events Gallery</a></li>
                     <% if user_signed_in? %>
                     <li class="menuItem"><a href="/users/<%= current_user.id %>">マイページ</a></li>
-                    <li class="menuItem"><a href="/users/sign_out">ログアウト</a></li>
+                    <li class="menuItem"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
                     <% else %>
                     <li class="menuItem"><a href="/users/sign_in">ログイン</a></li>
                     <% end %>
@@ -61,13 +62,13 @@
     <ul>
       <li><a href="#"><i class="fa fa-twitter"></i></a></li>
       <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+<!--       <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
       <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-      <li><a href="#"><i class="fa fa-flickr"></i></a></li>
+      <li><a href="#"><i class="fa fa-flickr"></i></a></li> -->
     </ul>
     <p>
-      &copy; 2014 Copyright Your Website<br>
-       Theme by <a href="http://www.wowthemes.net">WowThemes.Net</a>
+      &copy; 2015 Copyright Kitchen with Someone <br>
+       <!-- Theme by <a href="http://www.wowthemes.net">WowThemes.Net</a> -->
     </p>
   </div>
   </section>
