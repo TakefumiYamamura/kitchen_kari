@@ -4,6 +4,8 @@
   <title>Kitchen</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<!--   <script type='text/javascript' src='http://code.jquery.com/jquery-git2.js'></script>
+<script type="text/javascript" src="http://jpostal.googlecode.com/svn/trunk/jquery.jpostal.js"></script> -->
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -88,7 +90,19 @@ $(document).ready( function() {
     });
   });
 });
+$('#postcode1').jpostal({
+  postcode : [
+    '#postcode1',
+    '#postcode2'
+  ],
+  address : {
+    '#address1'  : '%3',
+    '#address2'  : '%4',
+    '#address3'  : '%5'
+  }
+});
 </script>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 </body>
 </html>

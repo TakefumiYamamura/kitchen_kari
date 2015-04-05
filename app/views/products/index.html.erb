@@ -3,7 +3,7 @@
     <div class="container">
         <div class="heading text-center">
             <img class="dividerline" src="<%= asset_path "sep.png" %>" alt="">
-            <h2>Events Gallery</h2>
+            <h2>Foods Gallary</h2>
             <img class="dividerline" src="<%= asset_path "sep.png" %>" alt="">
         </div>
         
@@ -15,7 +15,6 @@
                         <% @products.each do |product|%>
                         <li>
                             <figure>
-                                <img src="" alt="">
                                 <%= image_tag product.avatar.url %>
                                 <figcaption>
                                     <h3><%= product.title %></h3>
@@ -24,7 +23,7 @@
                             </figure>
                         </li>
                         <% end %>
-                        <li>
+<!--                         <li>
                             <figure>
                                 <img src="http://wowthemes.net/demo/leroy/img/dummies/10.jpg" alt=""/>
                                 <figcaption><h3>Thundercats next level</h3><p>Portland nulla butcher ea XOXO, consequat Bushwick Pinterest elit twee pickled direct. </p></figcaption>
@@ -73,7 +72,7 @@
                                 <img src="http://wowthemes.net/demo/leroy/img/dummies/17.jpg" alt=""/>
                                 <figcaption><h3>Brunch semiotics</h3><p>Ex disrupt cray yr, butcher pour-over magna umami kitsch before they sold out commodo.</p></figcaption>
                             </figure>
-                        </li>
+                        </li> -->
                     
                     </ul>
                 </section><!-- // end small images -->
@@ -83,7 +82,7 @@
                         <% @products.each do |product| %>
                         <li>
                             <figure>
-                                <%= image_tag product.avatar.url %>
+                                <img src="<%= product.avatar.url %>" alt="" style="max-height: 300px; width:auto;">
                                 <figcaption>
                                     <h3><%= product.title %></h3>
                                     <p><%= product.explanation %></p>
@@ -93,7 +92,7 @@
 
                         </li>
                         <% end %>
-                        <li>
+<!--                         <li>
                             <figure>
                                 <img src="http://wowthemes.net/demo/leroy/img/dummies/11.jpg" alt=""/>
                                 <figcaption><h3>Bushwick selvage synth</h3><p>Bicycle rights flannel Shoreditch, art party laboris Bushwick sriracha authentic chambray hella umami sed distillery master cleanse.</p></figcaption>
@@ -136,7 +135,7 @@
                                 <img src="http://wowthemes.net/demo/leroy/img/dummies/17.jpg" alt=""/>
                                 <figcaption><h3>Brunch semiotics</h3><p>Ex disrupt cray yr, butcher pour-over magna umami kitsch before they sold out commodo.</p></figcaption>
                             </figure>
-                        </li>
+                        </li> -->
                     </ul>
                     <nav>
                         <span class="icon nav-prev"></span>
