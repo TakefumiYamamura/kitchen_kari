@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
+    resources :products do
+    collection do
+      post 'search'
+    end
+  end
   root 'top#index'
-  resources :products
   resources :users
   post 'books' => 'books#create'
   # The priority is based upon order of creation: first created -> highest priority.

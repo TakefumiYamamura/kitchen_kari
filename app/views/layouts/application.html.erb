@@ -36,7 +36,7 @@
                     <li class="menuItem"><a href="/#gallery">Events Gallery</a></li>
                     <% if user_signed_in? %>
                     <li class="menuItem"><a href="/users/<%= current_user.id %>">マイページ</a></li>
-                    <li class="menuItem"><a href="/users/sign_out">ログアウト</a></li>
+                    <li class="menuItem"><%= link_to "ログアウト", "/users/sign_out", {method: :delete} %></li>
                     <% else %>
                     <li class="menuItem"><a href="/users/sign_in">ログイン</a></li>
                     <% end %>

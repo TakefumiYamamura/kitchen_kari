@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   # has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
   # validates_attachment :avatar, :content_type => ["image/jpeg", "image/png"]
   #上何故かうまくいかないからコメントアウト
+  scope :by_area_products, -> (area_params){where(area: area_params).map{|user| user.products}.flatten}
+  # →これlike検索の意味あるか？
 end

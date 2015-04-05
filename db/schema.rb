@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150404102631) do
+ActiveRecord::Schema.define(version: 20150405094252) do
 
   create_table "books", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "books_user_id"
     t.integer  "product_id"
     t.string   "book_time"
     t.integer  "persons"
@@ -67,6 +67,9 @@ ActiveRecord::Schema.define(version: 20150404102631) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "area"
+    t.text     "address"
+    t.integer  "tel"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -15,9 +15,17 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def search
+    @products = User.by_area_products(area_params[:area])
+  end
+
   private
   def create_params
     params.permit(:title, :explanation, :price, :capacity, :avatar, :date, :start_time, :finish_time)
+  end
+
+  def area_params
+    params.permit(:area)
   end
 
 end

@@ -2,11 +2,44 @@
 <br><br><br><br>
 <div>
   <h4>予約者(cooks)一覧</h4>
-  <%= render partial: 'book', collection: @books %>
+  <% if @books.present? %>
+    <%= render partial: 'book', collection: @books %>
+  <% else %>
+    <p>まだ予約がありません</p>
+  <% end %>
 </div>
 <br>
 <div>
   <h4>自分の予約を確認する</h4>
   <%= render partial: 'selfbook', collection: @self_books %>
+</div>
+
+<div>
+  <%= form_for @user do |f| %>
+
+    <div class="field">
+      <%= f.label :area, "エリア" %>
+      <%= f.text_field :area %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address, "住所" %>
+      <%= f.text_field :address %>
+    </div>
+
+    <div class="field">
+      <%= f.label :tel, "電話番号" %>
+      <%= f.text_field :tel %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録する" %>
+    </div>
+  <% end %>
 </div>
 
