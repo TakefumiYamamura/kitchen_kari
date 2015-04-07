@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405034842) do
+ActiveRecord::Schema.define(version: 20150405094252) do
 
   create_table "books", force: true do |t|
-    t.integer  "books_user_id"
+    t.integer  "user_id"
     t.integer  "product_id"
     t.string   "book_time"
     t.integer  "persons"
