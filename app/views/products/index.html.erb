@@ -2,6 +2,7 @@
 <!--gallery-->
 <section class="gallery" id="gallery">
     <div class="container">
+    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@lat}%2C#{@lng}" %>
         <div class="heading text-center">
             <img class="dividerline" src="<%= asset_path "sep.png" %>" alt="">
             <h2>Foods Gallary</h2>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405094252) do
+ActiveRecord::Schema.define(version: 20150408025049) do
 
   create_table "books", force: true do |t|
     t.integer  "user_id"
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(version: 20150405094252) do
     t.date     "date"
     t.time     "start_time"
     t.time     "finish_time"
+    t.float    "latitude",            limit: 24
+    t.float    "longitude",           limit: 24
+    t.string   "address"
   end
 
   create_table "users", force: true do |t|

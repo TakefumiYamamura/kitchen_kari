@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :users
   post 'books' => 'books#create'
+  post 'purchase' => 'products#purchase'
+  get  'purchased' => 'products#purchased'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

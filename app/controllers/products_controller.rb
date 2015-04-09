@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.page(params[:page]).per(8).order("id DESC")
+    @lat = Geocoder.search(params[:area])[0].data["geometry"]["location"]["lat"]
+    @lng = Geocoder.search(params[:area])[0].data["geometry"]["location"]["lng"]
   end
 
   def new
@@ -17,6 +19,19 @@ class ProductsController < ApplicationController
 
   def search
     @products = User.by_area_products(area_params[:area])
+  end
+
+  def purchase
+    binding.pry
+    require 'webpay'
+    webpay = WebPay.new(WEBPAY_SECRET_KEY)
+    webpay.charge.create(currency: 'jpy', amount: 1000, card: params['webpay-token'])
+    # WebPay.api_key = WEBPAY_SECRET_KEY
+    # WebPay::Charge.create(currency: 'jpy', amount: 1000, card: params['webpay-token'])
+    redirect_to action: :purchased
+  end
+
+  def purchased
   end
 
   private
