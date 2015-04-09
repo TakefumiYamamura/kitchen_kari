@@ -1,4 +1,11 @@
 class ProductsController < ApplicationController
+
+  before_action :configure_info, only: [:new]
+
+  def configure_info
+    redirect_to controller: :users, action: :registration unless current_user.address.present? || current_user.tel.present? || current_user.area.present?
+  end
+
   def index
     @products = Product.page(params[:page]).per(8).order("id DESC")
     @lat = Geocoder.search(params[:area])[0].data["geometry"]["location"]["lat"]
@@ -9,7 +16,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create(title: create_params[:title], explanation: create_params[:explanation], price: create_params[:price], capacity: create_params[:capacity],avatar: create_params[:avatar], date: create_params[:date], start_time: create_params[:start_time], finish_time: create_params[:finish_time])
+    Product.create(title: create_params[:title], explanation: create_params[:explanation], price: create_params[:price], capacity: create_params[:capacity],avatar: create_params[:avatar], date: create_params[:date], start_time: create_params[:start_time], finish_time: create_params[:finish_time], user_id: create_params[:user_id])
     redirect_to "/products"
   end
 
@@ -36,7 +43,7 @@ class ProductsController < ApplicationController
 
   private
   def create_params
-    params.permit(:title, :explanation, :price, :capacity, :avatar, :date, :start_time, :finish_time)
+    params.permit(:title, :explanation, :price, :capacity, :avatar, :date, :start_time, :finish_time, :user_id)
   end
 
   def area_params
