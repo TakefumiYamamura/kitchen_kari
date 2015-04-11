@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
 
   def create
     Product.create(title: create_params[:title], explanation: create_params[:explanation], price: create_params[:price], capacity: create_params[:capacity],avatar: create_params[:avatar], date: create_params[:date], start_time: create_params[:start_time], finish_time: create_params[:finish_time], user_id: create_params[:user_id])
-    redirect_to "/products"
+    redirect_to "/"
   end
 
   def show
@@ -29,7 +29,6 @@ class ProductsController < ApplicationController
   end
 
   def purchase
-    binding.pry
     require 'webpay'
     webpay = WebPay.new(WEBPAY_SECRET_KEY)
     webpay.charge.create(currency: 'jpy', amount: 1000, card: params['webpay-token'])

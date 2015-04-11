@@ -1,5 +1,5 @@
 <div>
-  <%= if selfbook.present? %>
+  <% if selfbook.present? %>
     人数：<%= selfbook.persons %>
     来訪予定時間：<%= selfbook.book_time %>
     <%= link_to "予約先の家を見てみるのだ", "/products/#{selfbook.product_id}" %>
