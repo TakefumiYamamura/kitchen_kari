@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.page(params[:page]).per(8).order("id DESC")
-    if params[:area] == nil
+    if params[:area] == ""
       @lat = 35.6640352
       @lng = 139.6982122
     else
