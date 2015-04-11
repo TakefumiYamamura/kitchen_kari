@@ -234,6 +234,29 @@ img#site-title {
 	border-top:1px solid #ddd;
 	border-bottom:2px solid #ddd;
 }
+.papers div.cook_info {
+  margin: 1em 0 0;
+  width: 100%;
+  overflow: hidden; /* clear float */
+}
+
+.papers div.cook_info h3 {
+  margin: 1em 0;
+  padding: 3px 10px;
+  border-bottom: solid 3px #78CE7A;
+  color: #363;
+}
+
+.papers div.cook_info p {
+  margin: 1em 0 1em 20px;
+}
+
+.papers div.cook_info img {
+  float: right; /* 画像を左寄せにする場合は left */
+
+  display: inline; /* for IE6,7 */
+  margin: 0 0 1em 20px;
+}
 .papers p {
 	text-align:left;
 	margin:1.5em 0;
