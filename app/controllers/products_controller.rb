@@ -8,8 +8,13 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.page(params[:page]).per(8).order("id DESC")
-    @lat = Geocoder.search(params[:area])[0].data["geometry"]["location"]["lat"] 
-    @lng = Geocoder.search(params[:area])[0].data["geometry"]["location"]["lng"]
+    if params[:area] == nil
+      @lat = 35.6640352
+      @lng = 139.6982122
+    else
+      @lat = Geocoder.search(params[:area])[0].data["geometry"]["location"]["lat"]
+      @lng = Geocoder.search(params[:area])[0].data["geometry"]["location"]["lng"]
+    end
   end
 
   def new
