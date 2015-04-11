@@ -1,22 +1,55 @@
 <%= render partial: '/layouts/header' %>
-<br><br><br><br><br>
-<%= image_tag @product.avatar.url %>
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@product.latitude}%2C#{@product.longitude}" %>
-<%= form_tag({controller: :books, action: :create}) do %>
-  <div class="field">
-    <%= label_tag '人数' %>
-    <%= text_field_tag 'persons' %>
-  </div>
-  <div class="field">
-    <%= label_tag '時間' %>
-    <%= date_field_tag 'book_time' %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "この条件で予約する" %>
-  </div>
-  <%= hidden_field_tag 'user_id', current_user.id %>
-  <%= hidden_field_tag 'product_id', @product.id %>
-<% end %>
-<%= form_tag(action: :purchase, method: :post) do %>
-<script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>"></script>
-<% end %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-7">
+            <div class="papers text-center">
+              <h1><%= @product.title %></h1>
+              <h4><%= @product.explanation %></h4>
+              <%= image_tag @product.avatar.url %>
+              <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@product.latitude}%2C#{@product.longitude}" %>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="papers text-center">
+              <div class="cook_info">
+              <div>
+                <h3>Cookのプロフィール</h3>
+                <%= image_tag @product.avatar.url, size: '200x200' %>
+                <p>Name: 田中タロウ</p>
+                <p>得意料理: フレンチ　イタリアン　肉じゃが</p>
+                <p>主婦歴: 20年</p>
+              </div>
+              <div>
+                <p>Profile: 料理が好きで30年位続けてたら料理教室を開いちゃっていました！趣味は食べ歩きです♥食べちゃうぞ♥</p>
+              </div>
+
+              </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="papers text-center">
+            <%= form_tag({controller: :books, action: :create}) do %>
+                <div class="field">
+                  <%= label_tag '人数' %>
+                  <%= text_field_tag 'persons' %>
+                </div>
+                <br>
+                <div class="field">
+                  <%= label_tag '時間' %>
+                  <%= date_field_tag 'book_time' %>
+                </div>
+                <br>
+                <div class="actions">
+                  <%= submit_tag "この条件で予約する" %>
+                </div>
+                <%= hidden_field_tag 'user_id', current_user.id %>
+                <%= hidden_field_tag 'product_id', @product.id %>
+              <% end %>
+              <br>
+              <%= form_tag(action: :purchase, method: :post) do %>
+              <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>"></script>
+              <% end %>
+            </div>
+        </div>
+    </div>
+</div>
