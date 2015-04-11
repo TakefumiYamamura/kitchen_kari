@@ -1,0 +1,13 @@
+---
+:User:
+  :avatar:
+  - :medium
+  - :thumb
+:Image:
+  :avatar:
+  - :medium
+  - :thumb
+:Product:
+  :avatar:
+  - :medium
+  - :thumb
