@@ -6,7 +6,7 @@
               <h1><%= @product.title %></h1>
               <h4><%= @product.explanation %></h4>
               <%= image_tag @product.avatar.url %>
-              <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@product.latitude}%2C#{@product.longitude}" %>
+              <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@product.user.latitude}%2C#{@product.user.longitude}" %>
             </div>
         </div>
         <div class="col-md-5">
@@ -14,7 +14,7 @@
               <div class="cook_info">
               <div>
                 <h3>Cookのプロフィール</h3>
-                <%= image_tag @product.avatar.url, size: '200x200' %>
+                <%= image_tag @product.user.avatar.url, size: '200x200' %>
                 <p>Name: 田中タロウ</p>
                 <p>得意料理: フレンチ　イタリアン　肉じゃが</p>
                 <p>主婦歴: 20年</p>
@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-5">
             <div class="papers text-center">
-            <%= form_tag({controller: :books, action: :create}) do %>
+             <%= form_tag({controller: :books, action: :create}) do %>
                 <div class="field">
                   <%= label_tag '人数' %>
                   <%= text_field_tag 'persons' %>

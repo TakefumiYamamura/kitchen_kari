@@ -2,7 +2,11 @@
 <!--gallery-->
 <section class="gallery" id="gallery">
     <div class="container">
-    <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@lat}%2C#{@lng}" %>
+
+    <!-- ここからコメントアウトしてるので注意 -->
+<!--     <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@lat}%2C#{@lng}" %> -->
+<!-- ここまでコメントアウト -->
+
         <div class="heading text-center">
             <img class="dividerline" src="<%= asset_path "sep.png" %>" alt="">
             <h2>Foods Gallary</h2>
@@ -85,15 +89,24 @@
                         <% @products.each do |product| %>
                         <li>
                             <figure>
-                                <img src="<%= product.avatar.url %>" alt="" style="max-height: 300px; width:auto;">
                                 <figcaption>
-                                    <h3><%= product.title %></h3>
-                                    <p>値段 <%= product.price %>円</p>
-                                    <p><%= product.explanation %></p>
-                                    <a href="/products/<%= product.id %>">詳しく見る</a>
+                                <div class="col-md-6">
+                                <div class="papers text-center" style = "position:absolute;">
+                                  <img src="<%= product.avatar.url %>" alt="" style="position:relative; clip:rect(0,0,175px,0);">
+                                  <h1><%= product.title %></h1>
+                                  <h4><%= product.explanation %></h4>
+                                </div>
+                                </div>
+                               <div class="col-md-6">
+                                <div class="papers text-center" style = "position:absolute;">
+                                  <img src="<%= product.user.avatar.url %>" alt="" style=" position:relative; clip:rect(0,0,175px,0);">
+                                  <h1>田中よし男</h1>
+                                  <h4>よろしくおなしゃす</h4>
+                                </div>
+                                </div>
+                                <a href="/products/<%= product.id %>">詳しく見る</a>
                                 </figcaption>
                             </figure>
-
                         </li>
                         <% end %>
 <!--                         <li>

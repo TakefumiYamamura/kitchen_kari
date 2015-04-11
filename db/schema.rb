@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20150411074159) do
     t.datetime "avatar_updated_at"
     t.string   "area"
     t.text     "address"
-    t.integer  "tel"
+    t.string   "tel",                    limit: 11
     t.float    "latitude",               limit: 24
     t.float    "longitude",              limit: 24
     t.integer  "user_type"
