@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.page(params[:page]).per(8).order("id DESC")
-    @lat = Geocoder.search(params[:area])[0].data["geometry"]["location"]["lat"]
+    @lat = Geocoder.search(params[:area])[0].data["geometry"]["location"]["lat"] 
     @lng = Geocoder.search(params[:area])[0].data["geometry"]["location"]["lng"]
   end
 
@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
 
   def create
     Product.create(title: create_params[:title], explanation: create_params[:explanation], price: create_params[:price], capacity: create_params[:capacity],avatar: create_params[:avatar], date: create_params[:date], start_time: create_params[:start_time], finish_time: create_params[:finish_time], user_id: create_params[:user_id])
-    redirect_to "/products"
+    redirect_to "/"
   end
 
   def show
