@@ -29,7 +29,6 @@ class ProductsController < ApplicationController
   end
 
   def purchase
-    binding.pry
     require 'webpay'
     webpay = WebPay.new(WEBPAY_SECRET_KEY)
     webpay.charge.create(currency: 'jpy', amount: 1000, card: params['webpay-token'])
