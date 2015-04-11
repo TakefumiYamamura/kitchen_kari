@@ -607,7 +607,7 @@ textarea.contact {
 /*----------------------------------------------------	 8. Footer Style------------------------------------------------------*/
 .footer {
 	background:#cc580c;
-	margin-top:120px;
+/*	margin-top:120px;*/
 	position:relative;
 }
 .footer .container {
