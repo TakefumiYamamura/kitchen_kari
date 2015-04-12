@@ -8,6 +8,9 @@
 <script type="text/javascript" src="http://jpostal.googlecode.com/svn/trunk/jquery.jpostal.js"></script> -->
 <!-- <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script> -->
   <%= csrf_meta_tags %>
+  <% if request.path_info == "/purchased" %>
+    <%=raw "<meta http-equiv='refresh' content='3;URL=/' >" %>  
+  <% end %>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>

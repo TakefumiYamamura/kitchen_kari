@@ -39,9 +39,10 @@
                 </div>
                 <br>
                 <%= hidden_field_tag 'product_id', @product.id %>
-               <br>
+               
                <% if user_signed_in? %>
-               <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>" data-partial="true" data-text="この条件で予約する" ></script>
+               <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>" data-partial="true"></script><br>
+               <%= submit_tag("予約する") %>
                <% else %>
                <a href="/users/sign_in">予約する前に会員登録</a>
                <% end %>
