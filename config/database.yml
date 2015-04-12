@@ -51,5 +51,6 @@ production:
   <<: *default
   database: kitchen_production
   username: root
+  socket:  /var/lib/mysql/mysql.sock
   # username: kitchen
   # password: <%= ENV['KITCHEN_DATABASE_PASSWORD'] %>
