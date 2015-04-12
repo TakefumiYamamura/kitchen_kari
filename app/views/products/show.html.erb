@@ -16,11 +16,9 @@
                 <h3>Cookのプロフィール</h3>
                 <%= image_tag @product.user.avatar.url, size: '200x200' %>
                 <p>Name: <%= @product.user.name %></p>
-                <p>得意料理: フレンチ　イタリアン　肉じゃが</p>
-                <p>主婦歴: 20年</p>
               </div>
               <div>
-                <p>Profile: 料理が好きで30年位続けてたら料理教室を開いちゃっていました！趣味は食べ歩きです♥食べちゃうぞ♥</p>
+                <p>Profile: <%= @product.user.profile %> </p>
               </div>
 
               </div>

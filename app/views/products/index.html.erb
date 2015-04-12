@@ -88,14 +88,14 @@
                                 <div class="papers text-center">
                                   <img src="<%= product.avatar.url(:thumb) %>" alt="" >
                                   <h1><%= product.title %></h1>
-                                  <h4><%= product.explanation %></h4>
+                                  <h5><%= product.explanation %></h5>
                                 </div>
                                 </div>
                                <div class="col-md-6">
                                 <div class="papers text-center">
                                   <img src="<%= product.user.avatar.url(:thumb) %>" alt="">
                                   <h1><%= product.user.name %></h1>
-                                  <h4>よろしくおなしゃす</h4>
+                                  <h5><%= product.user.profile %></h5>
                                 </div>
                                 </div>
                                 <a href="/products/<%= product.id %>">詳しく見る</a>
