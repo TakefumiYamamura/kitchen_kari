@@ -64,14 +64,12 @@
                                 <figcaption><h3>Brunch semiotics</h3><p>Ex disrupt cray yr, butcher pour-over magna umami kitsch before they sold out commodo.</p></figcaption>
                             </figure>
                         </li>
-                        
                         <li>
                             <figure>
                                 <img src="http://wowthemes.net/demo/leroy/img/dummies/16.jpg" alt=""/>
                                 <figcaption><h3>Brunch semiotics</h3><p>Ex disrupt cray yr, butcher pour-over magna umami kitsch before they sold out commodo.</p></figcaption>
                             </figure>
                         </li>
-                        
                         <li>
                             <figure>
                                 <img src="http://wowthemes.net/demo/leroy/img/dummies/17.jpg" alt=""/>
@@ -87,16 +85,16 @@
                             <figure>
                                 <figcaption>
                                 <div class="col-md-6">
-                                <div class="papers text-center" style = "position:absolute;">
-                                  <img src="<%= product.avatar.url %>" alt="" style="position:relative; clip:rect(0,0,175px,0);">
+                                <div class="papers text-center">
+                                  <img src="<%= product.avatar.url(:thumb) %>" alt="" >
                                   <h1><%= product.title %></h1>
                                   <h4><%= product.explanation %></h4>
                                 </div>
                                 </div>
                                <div class="col-md-6">
-                                <div class="papers text-center" style = "position:absolute;">
-                                  <img src="<%= product.user.avatar.url %>" alt="" style=" position:relative; clip:rect(0,0,175px,0);">
-                                  <h1>田中よし男</h1>
+                                <div class="papers text-center">
+                                  <img src="<%= product.user.avatar.url(:thumb) %>" alt="">
+                                  <h1><%= product.user.name %></h1>
                                   <h4>よろしくおなしゃす</h4>
                                 </div>
                                 </div>

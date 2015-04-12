@@ -15,7 +15,7 @@
               <div>
                 <h3>Cookのプロフィール</h3>
                 <%= image_tag @product.user.avatar.url, size: '200x200' %>
-                <p>Name: 田中タロウ</p>
+                <p>Name: <%= @product.user.name %></p>
                 <p>得意料理: フレンチ　イタリアン　肉じゃが</p>
                 <p>主婦歴: 20年</p>
               </div>
@@ -28,27 +28,26 @@
         </div>
         <div class="col-md-5">
             <div class="papers text-center">
-             <%= form_tag({controller: :books, action: :create}) do %>
+            
+              <%= form_tag(action: :purchase, method: :post) do %>
                 <div class="field">
                   <%= label_tag '人数' %>
                   <%= text_field_tag 'persons' %>
                 </div>
                 <br>
                 <div class="field">
-                  <%= label_tag '時間' %>
+                  <%= label_tag '' %>
                   <%= date_field_tag 'book_time' %>
                 </div>
                 <br>
-                <div class="actions">
-                  <%= submit_tag "この条件で予約する" %>
-                </div>
-                <%= hidden_field_tag 'user_id', current_user.id %>
                 <%= hidden_field_tag 'product_id', @product.id %>
-              <% end %>
-              <br>
-              <%= form_tag(action: :purchase, method: :post) do %>
-              <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>"></script>
-              <% end %>
+               <br>
+               <% if user_signed_in? %>
+               <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>" data-partial="true" data-text="この条件で予約する" ></script>
+               <% else %>
+               <a href="/users/sign_in">予約する前に会員登録</a>
+               <% end %>
+            <% end %>
             </div>
         </div>
     </div>

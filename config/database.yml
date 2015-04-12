@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: kitchen_production
-  username: kitchen
-  password: <%= ENV['KITCHEN_DATABASE_PASSWORD'] %>
+  # username: kitchen
+  # password: <%= ENV['KITCHEN_DATABASE_PASSWORD'] %>

@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
 
+  before_action :authenticate_user!, only: [:new]
   before_action :configure_info, only: [:new]
 
   def configure_info
-    redirect_to controller: :users, action: :registration unless current_user.address.present? || current_user.tel.present? || current_user.area.present?
+    redirect_to controller: :users, action: :registration unless  current_user.address.present? || current_user.tel.present? || current_user.area.present?
   end
 
   def index
@@ -39,6 +40,8 @@ class ProductsController < ApplicationController
     webpay.charge.create(currency: 'jpy', amount: 1000, card: params['webpay-token'])
     # WebPay.api_key = WEBPAY_SECRET_KEY
     # WebPay::Charge.create(currency: 'jpy', amount: 1000, card: params['webpay-token'])
+    Book.create(persons: create_params[:persons], book_time: create_params[:book_time], user_id: current_user.id, product_id: create_params[:product_id])
+    # redirect_to "/products"
     redirect_to action: :purchased
   end
 
@@ -47,7 +50,7 @@ class ProductsController < ApplicationController
 
   private
   def create_params
-    params.permit(:title, :explanation, :price, :capacity, :avatar, :date, :start_time, :finish_time, :user_id)
+    params.permit(:title, :explanation, :price, :capacity, :avatar, :date, :start_time, :finish_time, :user_id, :persons, :book_time, :product_id)
   end
 
   def area_params

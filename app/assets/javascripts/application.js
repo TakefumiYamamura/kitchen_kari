@@ -12,5 +12,26 @@
 //
 //= require jquery
 //= require jquery_ujs
-
-//= require_tree .
+//= require jquery
+//= require jquery
+//= require jquery_ujs
+//= require books
+//= require bootstrap
+//= require classie
+//= require colorfinder
+//= require common
+//= require contact
+//= require easing
+//= require gallery
+//= require gridscroll
+//= require imgloaded
+//= require masonry
+//= require menustick
+//= require modernizr
+//= require parallax
+//= require products
+//= require smoothscroll
+//= require top
+//= require users
+//= require wow
+//= require application
