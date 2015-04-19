@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "/users/auth/:provider/callback" =>'top#callback'
   devise_for :users
 
     resources :products do

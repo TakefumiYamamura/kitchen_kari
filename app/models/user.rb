@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   has_many :products
   has_many :images
   has_many :books
@@ -14,5 +14,32 @@ class User < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
   after_validation :geocode, :reverse_geocode
   enum user_type: %i(cook diner both)
+
+  class << self
+    def create_with_omniauth(auth)
+      image = auth["info"]["image"]
+      require "open-uri"
+      require "open_uri_redirections"
+      file = open(auth.info.image, :allow_redirections => :safe)
+      User.create(provider: auth["provider"],
+                  uid: auth["uid"],
+                  name: auth["info"]["name"],
+                  avatar: file,
+                  username: auth["info"]["name"],
+                  screen_name: auth["info"]["nickname"],
+                  email: User.create_unique_email,
+                  password: Devise.friendly_token[0,20],
+                  user_type: 2
+                  )
+    end
+
+    def create_unique_string
+      SecureRandom.uuid
+    end
+
+    def create_unique_email
+      User.create_unique_string + "@example.com"
+    end
+  end
 
 end

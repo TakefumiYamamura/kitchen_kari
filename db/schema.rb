@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150412054952) do
+ActiveRecord::Schema.define(version: 20150419045234) do
 
   create_table "books", force: true do |t|
     t.integer  "user_id"
@@ -78,6 +78,10 @@ ActiveRecord::Schema.define(version: 20150412054952) do
     t.integer  "user_type"
     t.string   "name"
     t.text     "profile"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "screen_name"
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
