@@ -61,3 +61,1280 @@ textarea#message{
 #contact-page .contact-wrap {
   margin-top: 20px;
 }
+
+// Place all the styles related to the Shifts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index
+.contents_t{
+  width: 1140px;
+  margin: 30px auto 50px;
+  clear: both;
+}
+
+.date_font{
+  font-size: 22px;
+  font: bold;
+  border-bottom: 3px solid #eeeeee;
+}
+
+.date_t{
+  width: 115px;
+}
+
+.class_t{
+  width: 237px;
+}
+
+.shift_table td{
+  // background-color: #fff;
+  background-color: rgb(251, 237, 237);
+  border: none !important;
+}
+
+.shift_table th{
+   background-color: #d9534f !important ;
+   color: #fff !important ;
+}
+
+
+.contents{
+  width: 1300px;
+  margin: 0px auto 100px;
+}
+
+.index_large_coma{
+  margin-left: 100px;
+  position: fixed;
+}
+
+.index_coma{
+  width: 300px;
+  color: #fff;
+  padding-left: 120px;
+  float: left;
+  background-color: #d9534f;
+  border-left: 1px solid #fff;
+}
+
+.index_date{
+  width: 100px;
+  height: 200px;
+  background-color: #d9534f;
+  color: #fff;
+  float: left;
+  clear: both;
+  border-bottom: 1px solid #eee;
+  padding-top: 90px;
+  padding-left: 10px;
+}
+
+.index_class{
+  background-color: #fff;
+  width:  1300px;
+  height: 200px;
+  border-bottom: 1px solid #eee;
+
+}
+
+.index_class_name{
+  width: 300px;
+  height: 200px;
+  font-size: 23px;
+  border-right: 1px solid #eee;
+  float: left;
+}
+
+.index_class_name p{
+  font-size: 20px;
+}
+
+.name_snall_box{
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+// show
+.shift{
+  width: 14%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  float: left;
+  font-family: "Open Sans";
+  border-radius:10px;
+  background-color: #fff;
+  border-left: solid #eee 1px;
+}
+
+.all_shift_count{
+  color: #999;
+  font-size: 12px;
+  display: inline-block;
+  // padding-top: 2px;
+  margin-left: 0px;
+}
+
+.new_h3 div{
+  margin-top: 10px;
+}
+
+.date p{
+  color: white;
+  background-color: #d9534f;
+  margin: 0px;
+  padding: 4.5% 12%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.today_shift p{
+    color: white;
+    background-color: rgb(0, 161, 133);
+    margin: 0px;
+    padding: 4.5% 12%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+  }
+
+.sub_btn .btn-default{
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  font-family: "遊ゴシック";
+  padding-top: 8px;
+  margin-top: 50px;
+  margin-bottom: 150px;
+  font-weight: bold;
+}
+
+.new_btn{
+  font-weight: bold;
+  font-size: 15px;
+  clear: both;
+}
+
+.name{
+  width: 100%;
+  margin: 0px auto 0px;
+  color: #4a4a4a;
+}
+
+.name p{
+  margin: 0px;
+  border-bottom: 1px solid #eee;
+  padding: 3px 10px;
+  color: #d9534f;
+  // font-size: 20px;
+  position: relative;
+  // background-color: red;
+  i {
+    position: absolute;
+    right: 20px;
+    top: 1.0rem;
+    font-style: normal;
+  }
+}
+
+.shift_maru{
+  position: absolute;
+  top: 7px;
+  margin-left: 4px;
+}
+
+.today_shift{
+  background-color: rgba(255, 244, 204, 0.5);
+  // background-color: rgba(44, 151, 222, 0.1);
+}
+
+.coma{
+  color: #4a4a4a;
+  font-size: 10px;
+  font-family: "遊ゴシック";
+}
+
+#hoge_id{
+  size: 20px;
+}
+
+.confirm_btn{
+  clear: both;
+}
+
+.btn-default{
+  border-top: none !important;
+  border-left: none !important;
+}
+
+//new
+.new_contener{
+  width:1650px;
+  margin: 0px auto 0px;
+}
+
+.new_btn{
+  text-align: center;
+  margin-top: 10px;
+}
+
+.new_btn .btn-default{
+  width: 270px;
+  height: 40px;
+  font-size: 15px;
+  font-family: "遊ゴシック";
+  padding-top: 11px;
+  margin-top: 30px;
+  font-weight: bold;
+  color: #d9534f;
+  margin-bottom: 50px;
+}
+
+.clearfix:after{
+  content: "";
+clear: both;
+display: block
+}
+
+.new_h3{
+    // text-align: center;
+    margin: 30px auto 1px;
+    // width: 1140px;
+    text-align: center;
+}
+
+.new_h3 .h3_inline{
+  border-bottom: 1px solid #fff;
+  line-height: 1.5em;
+}
+
+.maru{
+  font-size: 10px;
+  position: absolute;
+  top: 10px
+}
+
+.confirm_btn .btn-default{
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  font-family: "遊ゴシック";
+  padding-top: 8px;
+  margin-top: 3 0px;
+  margin-bottom: 150px;
+  font-weight: bold;
+  letter-spacing: 0.5em;
+}
+
+.check_box{
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 7.5px;
+  right: 18px;
+}
+
+.show_h3{
+  text-align: center;
+  line-height: 2.0em
+}
+
+.show_h3 .h3_inline{
+  border-bottom: 1px solid #fff;
+}
+
+.contener_shift{
+  width: 100%;
+  margin: 30px auto 30px;
+}
+
+.cona_background{
+  background-color: rgb(251, 237, 237);
+  font-weight: bold;
+  position: relative;
+}
+
+.check_label{
+  width: 100%;
+  padding: 0px 13px;
+  margin: 0px;
+  font-weight: normal;
+
+  &:hover{
+    width: 100%;
+    padding: 0px 13px;
+    background-color: rgb(251, 237, 237);
+    cursor: pointer;
+  }
+
+  .not_coma{
+    color: #d9534f;
+    font-size: 13px;
+  }
+
+}
+
+
+.name .check_p{
+  margin: 0px;
+  border-bottom: 1px solid #eee;
+  color: #d9534f;
+  font-size: 20px;
+  position: relative;
+  i {
+    position: absolute;
+    right: 20px;
+    top: 1.0rem;
+    font-style: normal;
+  }
+}
+
+.unavailable{
+  &:hover{
+    cursor: default;
+    background-color: #fff;
+  }
+}
+
+.confirm_coma{
+  background-color: rgb(251, 237, 237);
+}
+
+.advance_set{
+  background-color: rgb(251, 247, 237);
+}
+
+.confirm_messa{
+  font-weight: bold;
+  font-size: 18px;
+  border-bottom: 3px solid #d9534f;
+}
+
+//message
+.shift_message{
+  text-align: center;
+  margin-top:200px;
+}
+
+/************************************************************
+ * カレンダー
+ ************************************************************/
+#calBox {
+  position: absolute;
+  z-index: 200;
+}
+.dyn_cal {
+  position: relative;
+  z-index: 200;
+  display: none;
+  width: 436px;
+  height: 242px;
+  border: 1px solid #999;
+  background: #FFFFFF;
+  text-align: center;
+  overflow: hidden;
+}
+.dyn_cal > table {
+  position: absolute;
+  top: 33px;
+  left: 0;
+}
+.dyn_cal > table > tbody > tr > td {
+  border-style: none !important;
+  padding: 9px 0 0 9px;
+}
+.dyn_cal_tbl {
+  border-left: 1px solid #DDD !important;
+  width: 204px;
+}
+.dyn_cal_tbl td {
+  border-left: 1px solid #DDD !important;
+  width: 29px !important;
+}
+.dyn_cal_tbl .youbi {
+  border: solid #999;
+  border-width: 0 1px 0 0;
+}
+.dyn_cal_tbl .youbi td {
+  background: #999;
+  color: #FFFFFF;
+  font-weight: bold;
+  border: none;
+  padding: 0;
+}
+.dyn_cal_tbl th {
+  padding: 2px 0;
+  background-color: #DDD;
+  border: solid #DDD;
+  border-width: 1px;
+  color: #4f381e;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+.dyn_cal_tbl tr {
+  border-left: 1px solid #DDDDDD !important;
+}
+.dyn_cal_tbl .week td {
+  padding: 0;
+  width: 100%;
+  height: 28px;
+  border: solid #DDD;
+  border-width: 0 1px 1px 0;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  background: #F0F0F0;
+}
+.dyn_cal_tbl a {
+  display: block;
+  line-height: 28px;
+  height: 28px;
+  background: url(/CSP/img/common/bg_cal_cell.png?switch=20150528) 0 -28px no-repeat;
+  text-decoration: none;
+}
+.dyn_cal_tbl a:hover {
+  background: #EDCCCB;
+}
+.dyn_cal_tbl td a:link{
+  color:#777777;
+}
+.dyn_cal_tbl a.selectDate {
+  background: #FF858E;
+  color:#FFF !important;
+}
+.dyn_cal_tbl td.dyn_disable {
+  height: 28px;
+  background: url(/CSP/img/common/bg_cal_cell.png?switch=20150528) 0 0 no-repeat;
+  color: #858585;
+}
+.dyn_cal .dyn_cal_close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 10px;
+  width: 416px;
+  background-color: #999;
+  color: #FFF;
+  text-align: left;
+}
+.dyn_cal .dyn_cal_close a {
+  display: block;
+  float: right;
+  width: 20px;
+  height: 20px;
+  background: url(/CSP/img/common/btn_cal_close.png?switch=20150528) 0 0 no-repeat;
+  text-indent: -9999px;
+}
+.dyn_cal .dyn_cal_close a:hover {
+  background-position: 0 -20px;
+}
+.dyn_cal .dyn_cal_prev {
+  position: absolute;
+  top: 46px;
+  left: 12px;
+}
+.dyn_cal .dyn_cal_prev a {
+  display: block;
+  width: 13px;
+  height: 18px;
+  background: url(/CSP/img/common/btn_cal_arrow.png?switch=20150528) 0 0 no-repeat;
+  text-indent: -9999px;
+}
+.dyn_cal .dyn_cal_prev a:hover {
+  background-position: 0 -18px;
+}
+.dyn_cal .dyn_cal_next {
+  position: absolute;
+  top: 46px;
+  right: 13px;
+}
+.dyn_cal .dyn_cal_next a {
+  display: block;
+  width: 13px;
+  height: 18px;
+  background: url(/CSP/img/common/btn_cal_arrow.png?switch=20150528) -13px 0 no-repeat;
+  text-indent: -9999px;
+}
+.dyn_cal .dyn_cal_next a:hover {
+  background-position: -13px -18px;
+}
+.dyn_saturday{
+  color:#0065E0;
+}
+.dyn_saturday a:link {
+  color:#0065E0 !important;
+}
+.dyn_sunday{
+  color:#C80000;
+}
+.dyn_sunday a:link {
+  color:#C80000 !important;
+}
+
+
+/* area box */
+#areaBox  {
+  position: absolute;
+  z-index: 300;
+}
+#areaBox .areaBoxWrapper  {
+  position: relative;
+  width: 440px;
+  padding: 10px 0;
+  background-color: #FFFFFF;
+  border: 1px solid #999999;
+  z-index: 300;
+}
+#areaBox .areaBoxWrapper .areaBoxCassette {
+  float: left;
+  width: 210px;
+}
+#areaBox .areaBoxWrapper .headline  {
+  color: #777777;
+}
+#areaBox .areaBoxWrapper ul {
+  margin-top: 15px;
+  padding-bottom: 10px;
+}
+#areaBox .areaBoxWrapper ul li  {
+  display: block;
+  padding-right: 10px;
+}
+#areaBox .areaBoxWrapper ul.recent li {
+  display:inline-block;
+  width: 95px;
+  padding-right: 0px;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+#areaBox .areaBoxClose  {
+  font-size: 12px;
+  padding-top: 30px;
+  text-align: center;
+}
+#areaBox .areaBoxClose a  {
+  color: #777777;
+  text-decoration: none !important;
+}
+#areaBox .areaBoxClose a img  {
+  vertical-align: middle;
+  margin-bottom: 1px;
+}
+#areaBox .areaBoxTopClose {
+  font-size: 12px;
+  width: 60px;
+  margin-left: 200px;
+  float: left;
+}
+#areaBox .areaBoxTopClose a {
+  color: #777777;
+  text-decoration: none !important;
+}
+#areaBox .areaBoxTopClose a img {
+  vertical-align: middle;
+  margin-bottom: 1px;
+}
+#areaBox .areaBoxTopReturn {
+  font-size: 12px;
+  float: right;
+  margin-right: 10px;
+}
+
+/* 全エリア */
+#areaBox .areaBoxWrapper.allArea {
+  width: 480px;
+}
+#areaBox .areaBoxWrapper.allArea .areaBoxCassette {
+  float: none;
+  width: 100%
+}
+#areaBox .areaBoxWrapper.allArea .areaBoxCassette li  {
+  float: left;
+  width: 220px;
+}
+
+#areaBox .areaBoxWrapper.allArea .areaBoxCassette li.areaBoxCassetteBackLink  {
+  float: none;
+  margin-bottom: 20px;
+}
+#areaBox .areaBoxWrapper.allArea .areaBoxCassette li.areaBoxCassetteAllLink {
+  clear: both;
+  margin-top: 20px;
+}
+/* 注目のヘアサロン */
+.txtFeaturedSalon {
+  width:180px;
+  height:39px;
+  background:url("/CSP/img/bt/img_title_salon_01.png?switch=20150528") no-repeat 0 0;
+  text-indent: -9999px;
+}
+.myMenuTitleTop { margin:5px 5px 0; }
+.mySalonList li { padding:5px 0; }
+.mysalonbox ul {
+  border-left:1px solid #CCCCCC;
+  border-right:1px solid #CCCCCC;
+  border-bottom:1px solid #CCCCCC;
+  padding:5px 10px;
+}
+.mysalonbox2 ul {
+  background-color:#FFFFFF;
+  border-left:1px solid #CCCCCC;
+  border-right:1px solid #CCCCCC;
+  padding:5px 10px;
+}
+#mysalonbox2Bottom{
+  background-position: -5580px bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 3px;
+  zoom: 1;
+}
+.myFeaturedSalonShop  { background-position: -5430px bottom; background-repeat: repeat-y; }
+.myFeaturedSalonShopBottom {
+  background-position: -5250px bottom;
+  background-repeat: no-repeat;
+  zoom: 1;
+}
+.myFeaturedSalonShop ul {
+  padding:0 4px 10px;
+}
+.myFeaturedSalonShop li {
+  margin-top:5px;
+  *margin-top:-12px;
+}
+.myFeaturedSalonShop li.SalonfirstMG {
+  margin-top:2px !important;
+  *margin-top:-16px !important;
+}
+.mySalonShopbody {
+  background-position: -5954px 0;
+  background-repeat: repeat-y;
+}
+.mySalonShopbodyHead { background-position: -5610px top; background-repeat: no-repeat; }
+.mySalonShopbodyBottom {
+  background-position: -5782px bottom;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 7px 8px;
+  position: relative;
+  z-index: 10;
+}
+
+li.mySalonListBox a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.mySalonListBox a:link p.salonShop,
+.mySalonListBox a:visited p.salonShop {
+  text-decoration: underline !important;
+  color: #0077E6;
+}
+.mySalonListBox a:hover p.salonShop,
+.mySalonListBox a:active p.salonShop {
+  color: #0077E6; text-decoration: none  !important;
+}
+a:hover .mySalonShopbody {
+  background-position: -7240px 0;
+  background-repeat: repeat-y;
+}
+a:hover .mySalonShopbodyHead { background-position: -7412px top; background-repeat: no-repeat; }
+a:hover .mySalonShopbodyBottom {
+  background-position: -7584px bottom;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 7px 8px;
+  position: relative;
+  z-index: 10;
+}
+
+
+/* ensen */
+
+.stationList  {
+  padding-bottom: 20px;
+}
+
+.stationList li {
+  display: inline-block;
+  width: 231px;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+
+.stationList li span  {
+  color: #777777;
+}
+
+.suggestedStation {
+  margin: 0 0 10px -10px;
+  padding: 5px 0;
+  border: solid 1px #DDA2A0;
+  background-color: #F4E1E1;
+}
+.suggestedStation > dt  {
+  padding-left: 9px;
+}
+
+.suggestedStation ul  {
+  width: 596px;
+  margin-right: -1px;
+}
+
+.suggestedStation ul > li {
+  display: inline-block;
+  width: 114px;
+  padding-right: 2px;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+
+.polularStationList {
+  width: 596px;
+}
+
+.polularStationList li  {
+  display: inline-block;
+  width: 116px;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: top;
+}
+
+.mainContentTitleBdR  {
+  border-bottom: 2px solid #AA3355;
+  font-size: 16px;
+  text-indent: 0.5em;
+}
+
+.lineTitle  {
+  padding: 2px;
+  font-size: 14px;
+  text-indent: 0.5em;
+  color: #777777;
+}
+
+.inputStationName   {
+  width: 187px;
+  line-height: 1em;
+  ime-mode: active;
+}
+
+.bdPink3 {
+  border: 1px solid #E6BBBB;
+  border-image: initial;
+}
+
+.bgWhite2 {
+  background-color: #F6F3E3;
+}
+
+.preListHead {
+  padding: 0 10px 5px;
+  border-bottom: 2px solid #D9D9D9;
+  position: relative;
+}
+
+.errorMsg {
+  font-weight: bold;
+  color: red;
+  line-height: 1.8;
+}
+
+.bgErrorMsg {
+  padding: 10px 5px;
+  background-color: #F5DDDD;
+}
+
+
+.titleBottom {
+  border-bottom: 2px solid #BFBFBF;
+}
+
+.menuTxtHeight {
+  width: 515px;
+}
+
+.alertMsg {
+  font-size: 16px;
+  color: #DD0000;
+  font-weight: bold;
+}
+
+.bgAlertMsg {
+  background-color:#F5F3EF;
+  padding:15px;
+  text-align: center;
+}
+.tlf { table-layout: fixed; }
+
+.title{
+  background-color: #E8E8E2;
+    border: 1px solid #999999;
+    display: block;
+    line-height: 20px;
+    padding: 10px 10px 2px;
+}
+td.bgPink8.fgWhite {
+  width: 14px;
+}
+
+/* カレンダータブ */
+.calTab {
+    position: relative;
+    z-index: 10;
+    zoom: 1;
+  bottom:-2px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.calTab li {
+  float: left;
+  margin-right: 2px;
+}
+.calTab span,
+.calTab a {
+  display:block;
+  width:185px;
+  height:29px;
+  line-height:29px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #DDDDDD;
+  text-align: center;
+}
+.calTab a,
+.calTab span{
+  color: #666666 !important;
+  text-decoration: none !important;
+  background-position: -110px 0;
+  outline: 0;
+}
+.calTab a:hover{
+  color: #5b5a5a !important;
+  background-position: -110px -29px;
+}
+.calTab .current a,
+.calTab .current span {
+  color: #5b5a5a !important;
+  background-position: -110px -58px;
+}
+.detailTitle,
+.detailTitle a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333 !important;
+  text-decoration: none !important;
+}
+.calTab .salonDirect a,
+.calTab .salonDirect span{
+  color: #666666 !important;
+  text-decoration: none !important;
+  background-position: -325px 0;
+  outline: 0;
+}
+.calTab .salonDirect a:hover{
+  color: #5b5a5a !important;
+  background-position: -325px -29px;
+}
+.calTab .current.salonDirect a,
+.calTab .current.salonDirect span {
+  color: #5b5a5a !important;
+  background-position: -325px -58px;
+}
+.bdGlayTCal { border-top: 1px solid #DDDDDD; }
+
+.oNextRes {
+    background-position: -1330px -520px;
+    height: 30px;
+    width: 120px;
+}
+.oNextRes:hover {
+    background-position: -1330px -550px;
+}
+
+.underTabContents {
+  border-top:2px solid #988989;
+    position: relative;
+    z-index: 0;
+    padding-top:10px;
+    zoom:1;
+}
+
+/* 表エリア */
+.separateLine {
+  border-top:1px solid #DDDDDD;
+  height:1px;
+  overflow:hidden;
+  margin: 30px 0;
+}
+
+/* フォーム系 */
+.tfFR {
+  border-top: 1px solid #8E8E8E;
+  border-right: 1px solid #CCCCCC;
+  border-bottom: 1px solid #CCCCCC;
+  border-left: 1px solid #8E8E8E;
+  line-height: 1;
+  padding: 4px 2px;
+}
+
+/* ヘッダー・フッター */
+#wrapperMini {
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  position: relative;
+  width: 805px;
+}
+
+.titleMini {
+  background-color: #E8E8E2;
+  border: 1px solid #A6A6A6;
+  display: block;
+  line-height: 20px;
+  padding: 10px;
+}
+
+#footerMini {
+    border-top-color: #DDDDDD;
+    border-top-style: solid;
+    border-top-width: 1px;
+    height: 60px;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding-top: 10px;
+    position: relative;
+}
+
+#copyrightMini {
+  position: absolute;
+  top: 10px;
+}
+
+#footerLinksMini {
+  font-size: 10px;
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  right: -15px;
+}
+
+#footerLinksMini li{
+  float: left;
+  border-right: 1px solid #DDD;
+  padding-right: 15px;
+  *padding-right: 16px;
+  margin-left: 15px;
+  margin-right: -1px;
+}
+/* 詳細要望入力 */
+.moreDetailRequestInput {
+  position: relative;
+  display: block;
+  padding: 6px 10px;
+  border: 1px dotted #CCCCCC;
+  margin-top: 20px;
+  text-decoration: none !important;
+  overflow: hidden;
+  zoom: 1;
+}
+.moreDetailRequestInputProgressBar {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  _width: 103%;
+  height: 2px;
+  font-size: 0;
+  display: block;
+  background-color: #D36985;
+}
+.moreDetailRequestInputText {
+  text-decoration: underline;
+}
+.moreDetailRequestInput:hover .moreDetailRequestInputText {
+  text-decoration: none;
+}
+.moreDetailRequestInputArea {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  zoom: 1;
+}
+.moreDetailRequestInputAreaInner {
+  overflow: hidden;
+}
+.mmSettingBox {
+  background-color: #F2F2F2;
+  padding: 10px;
+}
+.mmSettingHeadline {
+  text-indent: 10px;
+  font-weight: bold;
+  color: #666666;
+  padding-bottom: 3px;
+}
+.mmSettingBody {
+  padding: 10px;
+  border-top: 1px solid #9C9C9C;
+}
+.mmSettingBody label {
+  line-height: 1.5;
+}
+.mmSettingBodyNotes {
+  font-size: 11px;
+  padding-left: 23px;
+}
+
+/* クーポン */
+.couponList {
+  font-size: 10px;
+}
+.couponListCassete {
+  margin-top: 5px;
+  border: 1px solid #EEAABB;
+  zoom: 1;
+}
+
+.couponTable {
+  border-spacing: 1px;
+  vertical-align: top;
+}
+.couponTable td > div > p {
+  word-break: break-all;
+}
+.couponLabelCT02,
+.couponLabelCT01,
+.couponLabelCT03 {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  width: 14px;
+}
+.couponLabelCT02  { background-color: #FB615F; color: #FFFFFF; }
+.couponLabelCT01  { background-color: #FFCCCB; color: #FB615F; }
+.couponLabelCT03  { background-color: #FFE8E8; color: #FB615F; }
+
+/* 限定クーポン */
+.limitedCouponList {
+  font-size: 10px;
+}
+
+.limitedCouponListCassete {
+  margin-top: 5px;
+  border: 1px solid #91AC8A;
+  zoom: 1;
+}
+
+/* タブエリア */
+.tabBottom {
+  border-bottom: 3px solid #F5C3CC;
+}
+
+/* タブエリア */
+.tabBottom2 {
+  border-bottom: 3px solid #7030A0;
+}
+
+/* 表説明エリア*/
+.topTable {
+  background-color: #EEECE1;
+  border: #BCBCBC solid 1px;
+  display: block;
+  line-height: 20px;
+  padding: 5px;
+}
+
+.whiteTable {
+  background-color: #FFFFFF;
+  border: #BCBCBC solid 1px;
+  display: block;
+  padding: 5px 5px 5px 15px;
+  line-height: 25px;
+}
+
+.whiteTable2 {
+  background-color: #FFFFFF;
+  border: #E6E6E6 solid 1px;
+  padding: 5px;
+}
+
+/* 表エリア */
+.coverTable {
+  background-color: #F5F3EF;
+  border-bottom: #DDDDDD solid 1px;
+  border-left: #DDDDDD solid 1px;
+  border-right: #DDDDDD solid 1px;
+  display: block;
+  padding: 5px;
+}
+
+
+.timeColor, .monthColor, .sat, .sun,
+.timeCell, .closeColor, .openColor, .dayCell {
+  border: 1px solid #E6E6E6;
+  font-weight: bold;
+  text-align: center;
+}
+.timeColor {
+  background-color: #F5F3EF;
+}
+
+.monthColor {
+  background-color: #EDEAE5;
+}
+.closeColor {
+  background-color: #EEEEEE;
+  height: 32px;
+  width: 35px;
+  text-align: center;
+}
+.openColor {
+  background-color: #FFFFFF;
+  height: 32px;
+  width: 35px;
+  text-align: center;
+}
+.sat {
+  background-color: #D9E3EC;
+  color: #4466BB;
+  height: 32px;
+  width: 35px;
+}
+.sun {
+  background-color: #EEDDD9;
+  color: #BB5555;
+  height: 32px;
+  width: 35px;
+}
+
+/* 表下部ボタンエリア*/
+.submitArea {
+  background-color: #F5F3EF;
+  display: block;
+  line-height: 20px;
+  padding: 10px;
+}
+
+.submitArea2 {
+  background-color: #F5F3EF;
+  display: block;
+  line-height: 20px;
+  padding: 10px;
+}
+
+/* 行揃え用 */
+.pL1e { padding-left: 1em; }
+.txt1e  { text-indent: -1em; }
+
+/* フォーム */
+textarea  { height:55px; }
+
+.reserveSampleDefault {
+  ime-mode: active;
+  width: 590px;
+  color:#999999;
+  display:none;
+  font-size: 12px;
+}
+
+/* 追加 */
+.innerTable {
+  width: 100%;
+  border-spacing: 3px;
+}
+
+.innerCell {
+  border: 0 none;
+
+}
+.innerTelCell {
+  border: 1px solid #E6E6E6;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+.innerCloseCell {
+  border: 1px solid #E6E6E6;
+  background-color: #EEEEEE;
+  text-align: center;
+}
+.moreInnerTable {
+  border: 0 none;
+  width: 100%;
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+}
+.timeCell {
+  background-color: #F5F3EF;
+}
+.dayCell {
+  background-color: #F5F3EF;
+  height: 32px;
+  width: 35px;
+}
+
+.separate {
+  height:  3px;
+  border:  solid 0px;
+  background-color: #FFFFFF;
+  padding: 0px;
+}
+.hourR, .scheduleOffR {
+  width:   100%;
+  height:  24px;
+  margin-top: 8px;
+}
+.scheduleR {
+  height: 32px;
+  width: 35px;
+}
+
+/* 表エリア */
+.pCellV5H5 th,
+.pCellV5H5 td {
+  padding: 5px;
+}
+
+
+#popUpTitle {
+  background-color: #f5f3ef;
+  border: 1px solid #dddddd;
+  margin-bottom: 12px;
+  padding: 8px 11px;
+}
+
+.popAdd {
+  background: url("/CSP/img/logo/lin_s_tenpo.gif?switch=20150528") no-repeat left top;
+  margin-top: 7px;
+  padding-top: 8px;
+}
+.titleLine {
+  border-bottom: 3px solid #e4e0d9;
+  padding: 5px 9px 6px;
+  margin-bottom: 17px;
+}
+
+.imgClose     { background: url(/CSP/img/bt/icons_buttons/close.gif?switch=20150528) no-repeat 0 0; width: 80px; height: 24px; }
+.imgClose:hover { background: url(/CSP/img/bt/icons_buttons/close.gif?switch=20150528) no-repeat 0 -24px; }
+
+.selectBtn    { background: url(/CSP/img/bt/icons_buttons/select2.gif?switch=20150528) no-repeat 0 0; width: 80px; height: 24px; }
+.selectBtn:hover{ background: url(/CSP/img/bt/icons_buttons/select2.gif?switch=20150528) no-repeat 0 -24px; }
+
+.bdCell3 {
+  border-top: 1px solid #A6A6A6;
+  border-left: 1px solid #A6A6A6;
+}
+.bdCell3 th,
+.bdCell3 td {
+  border-right: 1px solid #A6A6A6;
+  border-bottom: 1px solid #A6A6A6;
+}
