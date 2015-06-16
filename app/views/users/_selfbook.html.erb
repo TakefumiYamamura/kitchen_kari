@@ -1,7 +1,7 @@
 <div>
   <% if selfbook.present? %>
     人数：<%= selfbook.persons %>
-    来訪予定時間：<%= selfbook.book_time %>
-    <%= link_to "予約先の家を見てみるのだ", "/products/#{selfbook.product_id}" %>
+    来訪予定時間：<%= selfbook.date %> : <%= express_time(selfbook.start_time) %>
+    <%= link_to "予約先の確認", "/products/#{selfbook.product_id}" %>
   <% end %>
 </div>

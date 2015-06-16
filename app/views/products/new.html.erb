@@ -11,7 +11,7 @@
 <%= form_tag({action: :create}, multipart: true) do %>
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
   <div class="row" style="padding-top: 30px;">
-    <div class="col-sm-6 col-md-6">
+    <div class="col-sm-12 col-md-12">
         <div class="form-group">
             <span>タイトル *</span>
             <input type="text" name="title" class="form-control" required="required">
@@ -21,10 +21,10 @@
           <span class="input-group-addon">¥</span>
           <input type="text" class="form-control" id="inputGroupSuccess2" aria-describedby="inputGroupSuccess2Status" name="price">
         </div><br>
-        <div class="form-group" >
+<!--         <div class="form-group" >
             <span>募集人数 *</span>
             <input type="number" name="capacity" min="1" max="30"class="form-control" required="required">
-        </div>
+        </div> -->
         <div class="form-group">
             <span>説明 *</span>
             <input type="text" name="explanation" class="form-control" required="required">
@@ -34,8 +34,8 @@
             <%= file_field_tag :avatar %>
         </div>
     </div>
-    <div class="col-sm-6 col-md-6">
-        <div class="form-group">
+<!--     <div class="col-sm-6 col-md-6"> -->
+<!--         <div class="form-group">
             <span>日程</span>
             <input type="date" name="date" class="form-control" required="required">
         </div>
@@ -45,7 +45,7 @@
             <input type="time" name="start_time" class="form-control" required="required"><br>
             <span>終了時刻 *</span>
             <input type="time" name="finish_time" class="form-control" required="required">
-        </div>
+        </div> -->
 
 <!--         <div class="form-group">
             <span>郵便番号 〒</span>
@@ -116,7 +116,7 @@
         <div class="form-group">
             <button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">提出する</button>
         </div>
-    </div>
+<!--     </div> -->
   </div>
 <% end %>
 </div>

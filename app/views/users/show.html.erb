@@ -2,7 +2,7 @@
 <!-- これページ遷移せずにクリックしたらリスト表示でバーってなるようにしたい！！ -->
 <br><br><br><br>
 <div>
-  <h4>予約者(cooks)一覧</h4>
+  <h4>自分の家に食べに来る予約者一覧</h4>
   <% if @books.present? %>
     <%= render partial: 'book', collection: @books %>
   <% else %>
@@ -11,13 +11,14 @@
 </div>
 <br>
 <div>
-  <h4>自分の予約を確認する</h4>
+  <h4>自分が食べに行く予約を確認する</h4>
   <% if @self_books.present?  %>
     <%= render partial: 'selfbook', collection: @self_books %>
   <% else %>
     <p>まだ予約がありません</p>
   <% end %>
 </div>
+<br><br>
 <div>
   <a href="/schedule/new">cooksとして自分のスケジュールを入力する</a>
 </div>
