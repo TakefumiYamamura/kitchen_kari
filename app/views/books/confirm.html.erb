@@ -1,0 +1,31 @@
+<%= render partial: '/layouts/header' %>
+
+            <div class="papers text-center">
+              <%= form_tag("/books") do %>
+                <div class="field">
+                  <%= label_tag '人数' %>
+                  <%= number_field_tag 'persons' %>
+                </div>
+                <br>
+                <div class="field">
+                  <%= label_tag '日程:' %>
+                  <%=  @day %>
+                  <%= label_tag '時間:' %>
+                  <%=  express_time(@start_time) %>
+
+                </div>
+                <br>
+                <%= hidden_field_tag 'product_id', @product_id %>
+                <%= hidden_field_tag 'date', @day %>
+                <%= hidden_field_tag 'start_time', @start_time %>
+
+               <% if user_signed_in? %>
+<!--                <script src="https://checkout.webpay.jp/v1/" class="webpay-button" data-key="<%= WEBPAY_PUBLIC_KEY %>" data-partial="true"></script><br> -->
+               <%= submit_tag("予約する") %>
+               <% else %>
+               <a href="/users/sign_in">予約する前に会員登録</a>
+               <% end %>
+            <% end %>
+            </div>
+
+<%= render partial: '/layouts/footer' %>
