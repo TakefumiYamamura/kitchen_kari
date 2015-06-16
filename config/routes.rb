@@ -17,8 +17,12 @@ Rails.application.routes.draw do
   end
 
   post 'books' => 'books#create'
+  get  "books/:product_id/:date/:start_time/confirm" => 'books#confirm'
   post 'purchase' => 'products#purchase'
   get  'purchased' => 'products#purchased'
+
+  resources :schedule
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
