@@ -1,0 +1,64 @@
+section#contact.contact
+  div.container
+    div.row
+      div.col-md-6.col-md-offset-3
+        br
+        div.text-center
+          br
+          h4 料理を掲載するには場所の選択が必須です
+          div.tab-content
+            div.tab-pane.fade.in.active#user
+              br
+              = form_for(@user) do |f|
+
+                .contact.noMarr.col-md-12
+                  br
+                  |  <img class="dividerline" src="
+                  = asset_path "sep.png"
+                  | " alt="">
+                  br
+                    = f.label :料理エリア（料理を掲載する方は必須です）
+                    br
+                    = select_tag :place_id, options_from_collection_for_select(Place.all, :id, :name)
+                  br
+
+                  .text-center
+                    button.btn.btn-primary.btn-lg.btn-block type="submit" この条件で登録する
+
+
+/ .container
+/   .row
+/     br
+/     br
+/     h4.text-center
+/       | 料理を掲載するには以下の情報を登録する必要があります
+/   = form_tag("/users/#{current_user.id}", method: :patch) do
+/     |  <input type="hidden" name="user_id" value="
+/     = current_user.id
+/     | ">
+
+/     .form-group
+/       span
+/         |料理エリア（以下から選択して下さい）
+/         = select_tag :place_id, options_from_collection_for_select(Place.all, :id, :name), prompt: "以下からお選び下さい", class: "form-control"
+
+/     / .form-group
+/     /   span
+/     /     | 自己紹介 *
+/     /   br
+/     /   = text_area_tag :short_introduction, nil, class: 'form-conrol', rows: 2, cols: 124
+
+/     / .form-group
+/     /   span
+/     /     | 自己紹介（） *
+/     /   br
+/     /   = text_area_tag :profile, nil, class: 'form-conrol', rows: 5, cols: 124
+/     .form-group
+/       span
+/         | 画像
+/       = file_field_tag :avatar
+/     br
+/     br
+/     .form-group
+/       button.btn.btn-primary.btn-lg[type="submit" name="submit" required="required"]
+/         | 提出する

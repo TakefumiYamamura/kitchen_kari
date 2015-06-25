@@ -1,0 +1,56 @@
+section#gallery.gallery
+  .container
+    .heading.text-center
+      |  <img class="dividerline" src="
+      = asset_path "sep.png"
+      | " alt="">
+      h2
+        | Foods Gallary
+      |  <img class="dividerline" src="
+      = asset_path "sep.png"
+      | " alt="">
+    #grid-gallery.grid-gallery
+      section.grid-wrap
+        ul.grid
+          li.grid-sizer
+          - @products.each do |product|
+            li
+              figure
+                = image_tag product.avatar.url(:thumb)
+                figcaption[style="height:150px;"]
+                  h3
+                    = product.title
+                  p
+                    = product.explanation
+      section.slideshow
+        ul
+          - @products.each do |product|
+            li
+              figure
+                figcaption
+                  .col-md-6
+                    .papers.text-center
+                      |  <img src="
+                      = product.avatar.url(:thumb)
+                      | " alt="" >
+                      h1
+                        = product.title
+                      h5
+                        = product.explanation
+                  .col-md-6
+                    .papers.text-center
+                      |  <img src="
+                      = product.user.avatar.url(:thumb)
+                      | " alt="">
+                      h1
+                        = product.user.name
+                      h5
+                        = product.user.profile
+                  |  <a href="/products/
+                  = product.id
+                  | ">詳しく見る
+        nav
+          span.icon.nav-prev
+          span.icon.nav-next
+          span.icon.nav-close
+      = paginate(@products)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150616081000) do
+ActiveRecord::Schema.define(version: 20150621005158) do
 
   create_table "books", force: true do |t|
     t.integer  "user_id"
@@ -41,6 +41,12 @@ ActiveRecord::Schema.define(version: 20150616081000) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+  end
+
+  create_table "places", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "products", force: true do |t|
@@ -82,7 +88,7 @@ ActiveRecord::Schema.define(version: 20150616081000) do
     t.datetime "avatar_updated_at"
     t.string   "area"
     t.text     "address"
-    t.integer  "tel"
+    t.string   "tel",                    limit: 11
     t.float    "latitude",               limit: 24
     t.float    "longitude",              limit: 24
     t.integer  "user_type"
@@ -92,9 +98,12 @@ ActiveRecord::Schema.define(version: 20150616081000) do
     t.string   "uid"
     t.string   "screen_name"
     t.string   "username"
+    t.integer  "place_id"
+    t.text     "short_introduction"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["place_id"], name: "index_users_on_place_id", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

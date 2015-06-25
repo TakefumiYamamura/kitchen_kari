@@ -1,0 +1,79 @@
+header
+  #banner.banner.row
+    .parallax.text-center[style="background-image: url(http://wowthemes.net/demo/leroy/img/dummy1.jpg);"]
+      .parallax-pattern-overlay
+        .container.text-center[style="height:580px;padding-top:170px;"]
+          a[href="#"]
+            | <img id="site-title" class=" wow fadeInDown" wow-data-delay="0.0s" wow-data-duration="0.9s" src="
+            = asset_path "logo.png"
+            | " alt="logo"/>
+          h2.intro.wow.zoomIn[wow-data-delay="0.4s" wow-data-duration="0.9s"]
+            | Flarieat
+section#aboutus.aboutus
+  .container
+    .heading.text-center
+      |  <img class="dividerline" src="
+      = asset_path "sep.png"
+      | " alt="">
+      h2
+        | About
+      |  <img class="dividerline" src="
+      = asset_path "sep.png"
+      | " alt="">
+      h4
+        | 家庭料理をつくる人と食べる人をつなぎます
+    .row
+      .col-md-6
+        .papers
+          img[src="http://wowthemes.net/demo/leroy/img/dummies/18.jpg" alt=""]
+          br
+          h4.notopmarg.nobotmarg.text-center
+            | Cooks
+          h5
+            |  自慢の家庭料理を提供して下さい！レストランのように、特別な必要はありません。 温かい家庭料理で、Dinersを笑顔にしてあげることができます。
+          a[href="/products/new"]
+            | 料理を掲載する
+      .col-md-6
+        .papers
+          |  <img src="
+          = asset_path "girl.jpg"
+          | " alt="">
+          br
+          h4.notopmarg.nobotmarg.text-center
+            | Diners
+          h5
+            |  家庭料理を食べにいきましょう。イタリアンやフレンチのような特別さはない、でも口にするとほっとする、そんな温かい料理です。これで明日も頑張れますね！
+          a[href="#all_place"]
+            | 料理を探す
+section#specialties.specialties[style="margin-bottom:100px;"]
+  .container
+    .heading.text-center
+      .dividerline
+        img src="/assets/sep.png"
+      h2
+        | Place
+      .dividerline
+        img src="/assets/sep.png"
+      h4
+        | ご希望の場所からお選び下さい
+
+    .row#all_place
+      = render partial: "place", collection: @places
+|  <div class="gmap-area" style="background-image: url(
+= asset_path "map.jpg"
+| )">
+.container
+  .row
+    .col-sm-6.text-center
+      .gmap
+        iframe[src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d25931.54632417651!2d139.70550060327147!3d35.66608540913384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z5riL6LC3IOODh-OCo-ODiuODvA!5e0!3m2!1sja!2sjp!4v1428424187177" width="600" height="450" frameborder="0" style="border:0"]
+    .col-sm-6.map-content
+      ul.row
+        li.col-sm-12
+          address
+          h2
+            | あなたの家の近くのdinersです
+          h4
+            | まだ見ぬ出会い、
+            br
+            | 美味しい料理がそこには待っています。

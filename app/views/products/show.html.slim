@@ -1,0 +1,127 @@
+.container
+  .row
+    .col-md-7
+      .papers.text-center
+        h1
+          = @product.title
+        h4
+          = @product.explanation
+        = image_tag @product.avatar.url
+        = image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@product.user.latitude}%2C#{@product.user.longitude}"
+    .col-md-5
+      .papers.text-center
+        .cook_info
+          div
+            h3
+              | Cookのプロフィール
+            = image_tag @product.user.avatar.url, size: '200x200'
+            p
+              | Name:
+              = @product.user.name
+          div
+            p
+              | Profile:
+              = @product.user.profile
+              |sdasda
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+.container[style="margin-top:60px"]
+  .row
+    table.wFull.bdCell.pCell5.mT20[cellspacing="0"]
+
+    p.mT10
+      span.fgBlue.b
+        | ◎
+      | の日時が空いてます。ご希望の日時の
+      span.fgBlue.b
+        | ◎
+      | を選択してください。
+      br
+    #jsRsvCdTbl.ReserveConditionTable.underTabContents
+      .coverTable
+        .whiteTable2
+          table.innerTable.taC.nowrap[cellpadding="0" cellspacing="0"]
+            tr
+              th.timeColor[rowspan="2"]
+                span.iS.arrowPagingWeekLOff
+                  | 前の一週間
+              th.monthColor.pV10[colspan="2"]
+                |  
+              th.monthColor.pV10[colspan="12"]
+                | 2015年06月
+              th.timeColor[rowspan="2"]
+            tr
+              - @days.each do |d|
+                |  <th class="
+                = WCLASS[d.wday]
+                | ">
+                = d.day
+                br
+                | (
+                = WDAY[d.wday]
+                | )
+            tr
+              th.innerCell
+                table.moreInnerTable.vaT[cellpadding="0" cellspacing="0"]
+                  - (9..23).each do |t|
+                    tr
+                      th.timeCell
+                        p.hourR
+                          = t
+                          | ：00
+                    tr
+                      th.separate
+                    tr
+                      th.timeCell
+                        p.hourR
+                          = t
+                          | ：30
+                    tr
+                      th.separate
+              - @days.each do |day|
+                th.innerCell
+                  table.moreInnerTable[cellpadding="0" cellspacing="0"]
+                    - 30.times do |t|
+                      - if CooksSchedule.find_by(user_id: @product.user.id, start_time: 90+(t-1)*5, date: day, flag: 0).blank?
+                        tr
+                          td.closeColor
+                            p.scheduleOffR
+                              | －
+                        tr
+                          th.separate
+                      - else
+                        tr
+                          td.openColor
+                            p.scheduleR
+                              | <a href="/books/
+                              = @product.id
+                              | /
+                              = day
+                              | /
+                              = 90+t*5
+                              | /confirm" title= "◎" class= "bS db reserveImmediately offL vaT">◎
+                        tr
+                          th.separate
+              td[valign="top"]
+                table.moreInnerTable.vaT[cellpadding="0" cellspacing="0"]
+                  - (9..23).each do |t|
+                    tr
+                      th.timeCell
+                        p.hourR
+                          = t
+                          | ：00
+                    tr
+                      th.separate
+                    tr
+                      th.timeCell
+                        p.hourR
+                          = t
+                          | ：30
+                    tr
+                      th.separate

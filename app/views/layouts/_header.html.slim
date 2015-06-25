@@ -1,0 +1,30 @@
+header
+  .navbar-wrapper.stuckMenu.isFixed[style="position: fixed; top: 0px;"]
+    .container
+      .navwrapper
+        .navbar.navbar-inverse.navbar-static-top
+          .container
+            .navArea
+              .navbar-collapse.collapse
+                ul.nav.navbar-nav.navbar-left
+                  li.menuItem[style="margin-top: 0 ;"]
+                    a[href="/" style="color: #ff5a5f; padding-top: 21px ;"]
+                      i.fa.fa-cutlery.fa-2x
+                      |  ふらり〜と
+                  li.menuItem[style="margin-top: 0 ;"]
+                    form.navbar-form[action="/products" method="get"]
+                      input.span2[type="text" value placeholder="どこで食べる？" style="  background-color: #fff;
+  color: #565a5c;" name="area"]
+                      button.btn[type="submit" style="background-color: #ff5a5f;
+  color: #fff;"]
+                        | 検索
+                ul.nav.navbar-nav.navbar-right
+                  li.menuItem
+                    a[href="/products/new"]
+                      | 料理を掲載する
+                  - if user_signed_in?
+                    li.menuItem
+                      = link_to "ログアウト", destroy_user_session_path, method: :delete
+                  - else
+                    li.menuItem
+                      = link_to "ログイン", new_user_session_path

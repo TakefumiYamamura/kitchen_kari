@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :configure_info, only: [:new]
 
   def configure_info
-    redirect_to controller: :users, action: :registration unless  current_user.address.present? || current_user.tel.present? || current_user.area.present?
+    redirect_to controller: :users, action: :registration if current_user.place_id.blank?
   end
 
   def index

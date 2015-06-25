@@ -1,0 +1,20 @@
+.papers.text-center
+  = form_tag("/books") do
+    .field
+      = label_tag '人数'
+      = number_field_tag 'persons'
+    br
+    .field
+      = label_tag '日程:'
+      =  @day
+      = label_tag '時間:'
+      =  express_time(@start_time)
+    br
+    = hidden_field_tag 'product_id', @product_id
+    = hidden_field_tag 'date', @day
+    = hidden_field_tag 'start_time', @start_time
+    - if user_signed_in?
+      = submit_tag("予約する")
+    - else
+      a[href="/users/sign_in"]
+        | 予約する前に会員登録

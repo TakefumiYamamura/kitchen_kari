@@ -6,15 +6,16 @@ class UsersController < ApplicationController
   end
 
   def registration
+    @user = current_user
   end
 
   def update
-    current_user.update(address: add_params[:address], tel: add_params[:tel], area: add_params[:area], profile: add_params[:profile])
+    current_user.update(add_params)
     redirect_to controller: :products, action: :new
   end
 
   private
   def add_params
-    params.permit(:address, :tel, :area, :profile)
+    params.permit(:place_id, :avatar)
   end
 end

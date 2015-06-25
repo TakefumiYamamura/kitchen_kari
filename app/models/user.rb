@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :images
   has_many :books
   has_many :schedule
+  belongs_to :place
   has_attached_file :avatar, styles: { medium: '100x100#', thumb: "100x100#" }
   validates_attachment_content_type :avatar, :content_type => ["image/jpeg", "image/png", "image/gif", "image/jpg"]
   scope :by_area_products, -> (area_params){where(area: area_params).map{|user| user.products}.flatten}

@@ -1,0 +1,20 @@
+- if place.user.present?
+  .col-md-4
+    div.place_on_index
+      a href="/products/#{place.user.products.last.id}"
+        .restmenuwrap
+          h3.maincat.notopmarg.text-center
+            = place.name
+          .restitem.clearfix
+              img src="#{place.user.products.last.avatar.url}"
+              br
+              .product_title
+                = place.user.products.last.title
+              br
+              | -----------------------------------------------------------------
+              div.clearfix
+                .rm-thumb style="background-image: url(#{place.user.avatar.url}); background-size: cover;"
+                h5
+                  = place.user.name
+                br
+                = place.user.short_introduction
