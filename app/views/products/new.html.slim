@@ -1,0 +1,38 @@
+section
+  div.container
+    br
+    div.row
+      br
+      div.col-md-6.col-md-offset-3.text-center
+        h3
+          | 美味しそうな家庭料理を提供しよう！
+    = form_tag({action: :create}, multipart: true) do
+      |  <input type="hidden" name="user_id" value="
+      = current_user.id
+      | ">
+      .row[style="padding-top: 30px;"]
+        .col-sm-12.col-md-12
+          .form-group
+            span
+              | タイトル *
+            input.form-control[type="text" name="title" required="required"]
+          span
+            | 値段 *
+          .input-group
+            span.input-group-addon
+              | ¥
+            input#inputGroupSuccess2.form-control[type="text" aria-describedby="inputGroupSuccess2Status" name="price"]
+          br
+          .form-group
+            span
+              | 説明 *
+            input.form-control[type="text" name="explanation" required="required"]
+          .form-group
+            span
+              | 画像
+            = file_field_tag :avatar
+        br
+        br
+        .form-group
+          button.btn.btn-primary.btn-lg[type="submit" name="submit" required="required"]
+            | 提出する
