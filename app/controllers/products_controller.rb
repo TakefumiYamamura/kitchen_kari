@@ -19,10 +19,12 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @days = CooksSchedule.fetch_two_weeks(Date.today)
   end
 
   def create
     Product.create(title: create_params[:title], explanation: create_params[:explanation], price: create_params[:price], capacity: create_params[:capacity],avatar: create_params[:avatar], date: create_params[:date], start_time: create_params[:start_time], finish_time: create_params[:finish_time], user_id: create_params[:user_id])
+    CooksSchedule.create_cooks_schedule(params[:shift], current_user)
     redirect_to "/"
   end
 

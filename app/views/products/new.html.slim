@@ -33,6 +33,87 @@ section
             = file_field_tag :avatar
         br
         br
-        .form-group
-          button.btn.btn-primary.btn-lg[type="submit" name="submit" required="required"]
-            | 提出する
+
+        p
+         | 空いてる日にちを登録しましょう
+        #jsRsvCdTbl.ReserveConditionTable.underTabContents
+          .coverTable
+            .whiteTable2
+              table.innerTable.taC.nowrap[cellpadding="0" cellspacing="0"]
+                tr
+                  th.timeColor[rowspan="2"]
+                    span.iS.arrowPagingWeekLOff
+                      | 前の一週間
+                  th.monthColor.pV10[colspan="2"]
+                    |  
+                  th.monthColor.pV10[colspan="12"]
+                    | 2015年06月
+                  th.timeColor[rowspan="2"]
+                tr
+                  - @days.each do |d|
+                    |  <th class="
+                    = WCLASS[d.wday]
+                    | ">
+                    = d.day
+                    br
+                    | (
+                    = WDAY[d.wday]
+                    | )
+                tr
+                  th.innerCell
+                    table.moreInnerTable.vaT[cellpadding="0" cellspacing="0"]
+                      - (9..23).each do |t|
+                        tr
+                          th.timeCell
+                            p.hourR
+                              = t
+                              | ：00
+                        tr
+                          th.separate
+                        tr
+                          th.timeCell
+                            p.hourR
+                              = t
+                              | ：30
+                        tr
+                          th.separate
+                  - @days.each do |day|
+                    th.innerCell
+                      table.moreInnerTable[cellpadding="0" cellspacing="0"]
+                        - 30.times do |t|
+                          - if CooksSchedule.find_by(user_id: current_user.id, start_time: 90+t*5, date: day, flag: 0).blank?
+                            tr
+                              td.closeColor
+                                p.scheduleOffR
+                                  | －
+                                  = check_box "shift[#{day}]", "#{t*5+90}" , {}, true, false
+                            tr
+                              th.separate
+                          - else
+                            tr
+                              td.openColor
+                                p.scheduleR
+                                  | ◎
+                                  = check_box "shift[#{day}]", "#{t*5+90}" , {}, true, false
+                            tr
+                              th.separate
+                  td[valign="top"]
+                    table.moreInnerTable.vaT[cellpadding="0" cellspacing="0"]
+                      - (9..23).each do |t|
+                        tr
+                          th.timeCell
+                            p.hourR
+                              = t
+                              | ：00
+                        tr
+                          th.separate
+                        tr
+                          th.timeCell
+                            p.hourR
+                              = t
+                              | ：30
+                        tr
+                          th.separate
+          .form-group
+            button.btn.btn-primary.btn-lg[type="submit" name="submit"]
+              | 提出する
