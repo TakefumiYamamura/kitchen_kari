@@ -6,14 +6,14 @@
           h3.maincat.notopmarg.text-center
             = place.name
           .restitem.clearfix
-              img src="#{place.user.products.last.avatar.url}"
+              img src="#{place.user.products.last.avatar.url(:thumb)}"
               br
               .product_title
                 = place.user.products.last.title
               br
               | -----------------------------------------------------------------
               div.clearfix
-                .rm-thumb style="background-image: url(#{place.user.avatar.url}); background-size: cover;"
+                .rm-thumb style="background-image: url(#{place.user.avatar.url(:thumb)}); background-size: cover;"
                 h5
                   = place.user.name
                 br

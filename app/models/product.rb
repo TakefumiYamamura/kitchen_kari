@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   belongs_to :user
   has_many :images
   has_many :books
-  has_attached_file :avatar, styles: { medium: "100x100#", thumb: "100x100#" }
+  has_attached_file :avatar, styles: { medium: "1000x1000#", thumb: "1000x800#" }
   validates_attachment_content_type :avatar, :content_type => ["image/jpeg", "image/png", "image/gif", "image/jpg"]
   # geocoded_by :address
   # after_validation :geocode, if: Proc.new { |a| a.address_changed? }
