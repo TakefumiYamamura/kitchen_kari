@@ -24,6 +24,8 @@ header
                       | 料理を掲載する
                   - if user_signed_in?
                     li.menuItem
+                      = link_to "マイページ", user_path(current_user)
+                    li.menuItem
                       = link_to "ログアウト", destroy_user_session_path, method: :delete
                   - else
                     li.menuItem
